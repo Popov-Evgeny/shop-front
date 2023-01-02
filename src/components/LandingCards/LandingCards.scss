@@ -1,0 +1,55 @@
+.categories-wrapper {
+  display: flex;
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+  }
+}
+
+.vert-card-wrapper {
+  display: flex;
+  flex: 50%;
+  flex-direction: column;
+  justify-content: space-around;
+  @media screen and (max-width: 600px) {
+    flex: 100%;
+  }
+}
+
+.hor-card-wrapper {
+  display: flex;
+  flex: 50%;
+  flex-direction: row;
+  justify-content: space-around;
+  @media screen and (max-width: 600px) {
+    flex: 100%;
+  }
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+.cards-category {
+  display: flex;
+  text-align: center;
+  margin: 10px;
+}
+
+.cards-category .Watches {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.cards-category .Headphones {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-category .Monitors {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.cards-category .Laptops {
+  display: flex;
+  flex-direction: column;
+}

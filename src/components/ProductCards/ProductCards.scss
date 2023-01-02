@@ -1,0 +1,30 @@
+.cards-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.cards {
+  min-width: 300px;
+  width: 25%;
+}
+
+@media screen and (max-width: 500px) {
+  .cards {
+    width: 100%;
+  }
+
+}
+@media screen and (max-width: 950px) {
+  .cards {
+    width: 50%;
+  }
+
+}
+@media screen and (max-width: 1200px) {
+  .cards {
+    width: 30%;
+    margin: 15px;
+  }
+
+}

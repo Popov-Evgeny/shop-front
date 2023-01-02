@@ -1,6 +1,6 @@
 import React from 'react';
 import {Outlet} from "react-router-dom";
-import AppBarComponent from "../AppBarComponent/AppBarComponent";
+import AppBarComponent from "../../components/AppBarComponent/AppBarComponent";
 import Container from "@mui/material/Container";
 
 const Layout: React.FC<React.PropsWithChildren> = () => {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -15,17 +15,25 @@ import MenuItem from '@mui/material/MenuItem';
 import Logo from '../../assets/icons/logo.png';
 import {Icon} from "@mui/material";
 import {NavLink} from "react-router-dom";
-
-const pages = ['All products', 'Solutions', 'About', 'Support'];
-const solutions = ['Phones', 'Laptops', 'Watches', 'Tablets'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import {useAppDispatch, useAppSelector} from "../../app/hooks";
+import {fetchCategories} from "../../store/categories/categoriesThunks";
+import {selectCategories} from "../../store/categories/categoriesSlice";
+import {Categories} from "../../type";
+import {PAGES, SETTINGS} from "../../constants";
 
 const AppBarComponent = () => {
+    const dispatch = useAppDispatch();
+    const categories = useAppSelector(selectCategories);
+
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
     const open = Boolean(anchorEl);
+
+    useEffect(() => {
+        dispatch(fetchCategories());
+    }, [dispatch]);
 
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
@@ -97,7 +105,7 @@ const AppBarComponent = () => {
                                 display: {xs: 'block', md: 'none'},
                             }}
                         >
-                            {pages.map((page) => (
+                            {PAGES.map((page) => (
                                 page === 'Solutions' ? (
                                     <Box key={page} >
                                         <MenuItem
@@ -118,9 +126,9 @@ const AppBarComponent = () => {
                                             open={open}
                                             onClose={handleClose}
                                         >
-                                            {solutions.map((item) => (
-                                                <MenuItem key={item} onClick={handleClose}>
-                                                    <Typography textAlign="center">{item}</Typography>
+                                            {categories && categories.map((item: Categories) => (
+                                                <MenuItem key={Math.random()} onClick={handleClose}>
+                                                    <Typography textAlign="center">{item.title}</Typography>
                                                 </MenuItem>
                                             ))}
                                         </Menu>
@@ -148,7 +156,7 @@ const AppBarComponent = () => {
                         </Icon>
                     </Box>
                     <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}} color="red">
-                        {pages.map((page) => (
+                        {PAGES.map((page) => (
                             page === 'Solutions' ? (
                                 <Box key={page}>
                                     <Button
@@ -170,9 +178,9 @@ const AppBarComponent = () => {
                                         open={open}
                                         onClose={handleClose}
                                     >
-                                        {solutions.map((item) => (
-                                            <MenuItem key={item} onClick={handleClose}>
-                                                <Typography textAlign="center">{item}</Typography>
+                                        {categories && categories.map((item) => (
+                                            <MenuItem key={Math.random()} onClick={handleClose}>
+                                                <Typography textAlign="center">{item.title}</Typography>
                                             </MenuItem>
                                         ))}
                                     </Menu>
@@ -209,7 +217,7 @@ const AppBarComponent = () => {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            {settings.map((setting) => (
+                            {SETTINGS.map((setting) => (
                                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                                     <Typography textAlign="center">{setting}</Typography>
                                 </MenuItem>

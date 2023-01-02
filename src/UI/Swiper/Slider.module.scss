@@ -1,5 +1,8 @@
 .container {
   margin: 55px 0;
+  @media screen and (max-width: 767px) {
+    margin: 25px 0;
+  }
 
   .myswiper {
     height: 555px;
