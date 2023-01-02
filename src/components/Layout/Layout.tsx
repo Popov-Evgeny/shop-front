@@ -1,6 +1,7 @@
 import React from 'react';
 import {Outlet} from "react-router-dom";
 import AppBarComponent from "../AppBarComponent/AppBarComponent";
+import Container from "@mui/material/Container";
 
 const Layout: React.FC<React.PropsWithChildren> = () => {
     return (
@@ -8,8 +9,10 @@ const Layout: React.FC<React.PropsWithChildren> = () => {
             <header>
                 <AppBarComponent/>
             </header>
-            <main className="container">
-                <Outlet/>
+            <main>
+                <Container maxWidth="xl">
+                    <Outlet/>
+                </Container>
             </main>
         </div>
     );

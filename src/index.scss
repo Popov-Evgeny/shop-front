@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  bottom: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 14px;
+  color: #000000;
+  background: #F5F5F5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: nobe;
+}
+
+.swiper-button-next {
+  width: calc(var(--swiper-navigation-size) / 45 * 20) !important;
+  right: 15px!important;
+  background-image: url("assets/icons/arrow-right.svg");
+}
+.swiper-button-prev {
+  width: calc(var(--swiper-navigation-size) / 45 * 20) !important;
+  left: 15px!important;
+  background-image: url("assets/icons/arrow-left.svg");
+}
+
+@media screen and (max-width: 600px) {
+  .swiper-button-next{
+    background-image: url("assets/icons/arrow-right-white.svg");
+  }
+  .swiper-button-prev {
+    background-image: url("assets/icons/arrow-left-white.svg");
+  }
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    background-image: url("assets/icons/Rectangle-white.svg") !important;
+  }
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  background-image: url("assets/icons/Rectangle.svg");
+  width: calc( 100vw / (1330 - 500) * (70 - 20) + 25px);
+  height: 2px;
+  border-radius: 0;
+  margin: 0 20px!important;
+}
+
+.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 30px!important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+
+
+/*font-family: 'Readex Pro', sans-serif;*/

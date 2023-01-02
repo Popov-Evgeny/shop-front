@@ -99,7 +99,7 @@ const AppBarComponent = () => {
                         >
                             {pages.map((page) => (
                                 page === 'Solutions' ? (
-                                    <Box key={page}>
+                                    <Box key={page} >
                                         <MenuItem
                                             id="fade-button"
                                             aria-controls={open ? 'fade-menu' : undefined}

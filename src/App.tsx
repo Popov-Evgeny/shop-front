@@ -1,11 +1,16 @@
 import React from 'react';
 import './App.css';
+import Slider from "./UI/Swiper/Slider";
+import Box from "@mui/material/Box";
 
 function App() {
   return (
-    <div className="App">
-        <h3>home</h3>
-    </div>
+    <>
+        <Box>
+            <Slider/>
+        </Box>
+
+    </>
   );
 }
 
