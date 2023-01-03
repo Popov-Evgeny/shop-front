@@ -40,6 +40,7 @@ export const ProductsSlice = createSlice({
 
     builder.addCase(fetchProduct.pending, (state) => {
       state.fetchOneLoading = true;
+      state.product = null;
     });
     builder.addCase(fetchProduct.fulfilled, (state, action) => {
       state.fetchOneLoading = false;

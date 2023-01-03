@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import ProductCard from "../ProductCard/ProductCard";
+import ProductCard from "./ProductCard";
 import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import {selectProductsLimit} from "../../store/products/productsSlice";
 import {fetchProductsLimit} from "../../store/products/productsThunks";
@@ -16,7 +16,8 @@ const ProductCards = () => {
 
     return (
         <div className="cards-wrapper">
-            {productsLimit && productsLimit.map((product: Product) => (<ProductCard key={Math.random()} product={product}/>))}
+            {productsLimit && productsLimit.map((product: Product) => (
+                <ProductCard key={Math.random()} product={product}/>))}
         </div>
     );
 };

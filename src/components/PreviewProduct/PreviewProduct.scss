@@ -1,0 +1,135 @@
+.empty {
+  font-family: 'Readex Pro', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  margin: 80px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 150px 0;
+}
+
+.product-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 70px 0;
+}
+
+.product-block-img {
+  min-width: 300px;
+  min-height: 300px;
+  background: #ffffff;
+  max-width: 45%;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid #000000;
+  box-shadow: 0 2px 14px 1px #000000;
+  margin: 15px;
+}
+
+.product-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.product-block-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+}
+
+@media (max-width: 900px) {
+  .product-block {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  .product-block-info {
+    width: 100%;
+  }
+}
+
+.product-title {
+  text-align: center;
+  font-family: 'Readex Pro', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(20px + 12 * (100vw / 1280));
+  @media (max-width: 767px) {
+    font-size: calc(20px + (24 * 0.7) * ((100vw - 320px) / 1280));
+  }
+  line-height: calc((20px + 16 * (100vw / 1280)) * 1.2);
+  @media (max-width: 767px) {
+    line-height: calc((20px + (16 + 16 * 0.7) * ((100vw - 320px) / 1280)) * 1.2);
+  }
+}
+
+.product-category {
+  text-align: center;
+  font-family: 'Readex Pro', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(20px + 8 * (100vw / 1280));
+  @media (max-width: 767px) {
+    font-size: calc(20px + (16 * 0.7) * ((100vw - 320px) / 1280));
+  }
+  line-height: calc((20px + 16 * (100vw / 1280)) * 1.2);
+  @media (max-width: 767px) {
+    line-height: calc((20px + (16 + 16 * 0.7) * ((100vw - 320px) / 1280)) * 1.2);
+  }
+  margin-bottom: 35px;
+}
+
+.product-description {
+  font-family: 'Readex Pro', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  b {
+    font-size: 18px;
+  }
+}
+
+.product-price {
+  font-family: 'Readex Pro', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  font-style: italic;
+  b {
+    font-style: normal;
+    font-size: 18px;
+  }
+}
+
+.product-link {
+  font-family: 'Readex Pro', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  border: 2px solid #000000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 15px;
+  transition: 1.5s;
+  background: #ffffff;
+  &:hover{
+    transition: 1.5s;
+    background: #ccc;
+    box-shadow: 0 3px 10px 1px gray;
+  }
+}

@@ -7,6 +7,8 @@ import Layout from "./UI/Layout/Layout";
 import {store} from './app/store';
 import {Provider} from "react-redux";
 import ProductCards from "./components/ProductCards/ProductCards";
+import PreviewProduct from "./components/PreviewProduct/PreviewProduct";
+import NotFound from "./UI/NotFound/NotFound";
 
 const router = createBrowserRouter([
     {
@@ -22,11 +24,12 @@ const router = createBrowserRouter([
                 element: <ProductCards/>,
             },
             {
+                path: "/products/:id",
+                element: <PreviewProduct/>,
+            },
+            {
                 path: "*",
-                element:
-                    <div>
-                        <h4>Not found!!!</h4>
-                    </div>,
+                element: <NotFound/>
             },
         ]
     },

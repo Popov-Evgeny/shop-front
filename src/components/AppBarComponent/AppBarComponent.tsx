@@ -67,7 +67,7 @@ const AppBarComponent = () => {
                         {
                             display: {xs: 'none', md: 'flex'},
                             mr: 1,
-                            minWidth: '70px'
+                            minWidth: '170px'
                         }}>
                         <NavLink to="/">
                             <Icon sx={{display: 'flex', minWidth: '70px'}}>

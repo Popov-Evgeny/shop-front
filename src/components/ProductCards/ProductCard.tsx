@@ -3,15 +3,21 @@ import {Card, CardActionArea, CardContent, CardMedia} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Product} from "../../type";
 import {API_URL} from "../../constants";
-import './ProductCard.scss';
+import './ProductCards.scss';
+import {useNavigate} from "react-router-dom";
 
 interface Props {
     product: Product
 }
 
 const ProductCard: React.FC<Props> = ({product}) => {
+    const navigate = useNavigate();
+
     return (
-        <Card className="cards" sx={{maxWidth: 450}}>
+        <Card
+            className="cards" sx={{maxWidth: 450}}
+            onClick={() => navigate('/products/' + product._id)}
+        >
             <CardActionArea className="card-body">
                 <CardMedia
                     sx={{height: 220}}
