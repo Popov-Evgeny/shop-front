@@ -1,0 +1,89 @@
+.footer {
+  padding: 40px 24px 20px;
+  background: #ccc;
+  margin: 0 -24px;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  &:after {
+    content: '';
+    border-bottom: 3px solid #F5F5F5;
+    width: 95%;
+    height: 3px;
+  }
+}
+
+.footer-block {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 24%;
+  margin: 20px 5px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1050px) {
+  .footer-wrapper {
+    justify-content: space-between;
+    &:after {
+      display: none;
+    }
+  }
+  .footer-block {
+    width: 45%;
+    border-bottom: 3px solid #F5F5F5;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .footer-block {
+    width: 100%;
+  }
+}
+
+.footer-block-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  p {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    max-width: 250px;
+  }
+  img {
+    width: 100px;
+    height: 30px;
+  }
+}
+
+.css-1qze0ml-MuiIcon-root {
+  height: 1.2em;
+}
+
+.footer-block-title {
+  font-family: 'Readex Pro', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.footer-block-list {
+  flex-direction: column;
+}
+
+.footer-block-link {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  color: #000000;
+}

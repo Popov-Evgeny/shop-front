@@ -71,7 +71,6 @@ const AppBarComponent = () => {
                         }}>
                         <NavLink to="/">
                             <Icon sx={{display: 'flex', minWidth: '70px'}}>
-
                                 <img style={{margin: '0 auto'}} src={Logo} alt="logo"/>
                             </Icon>
                         </NavLink>
@@ -107,7 +106,7 @@ const AppBarComponent = () => {
                         >
                             {PAGES.map((page) => (
                                 page === 'Solutions' ? (
-                                    <Box key={page} >
+                                    <Box key={page}>
                                         <MenuItem
                                             id="fade-button"
                                             aria-controls={open ? 'fade-menu' : undefined}
@@ -122,6 +121,7 @@ const AppBarComponent = () => {
                                             MenuListProps={{
                                                 'aria-labelledby': 'fade-button',
                                             }}
+                                            sx={{ maxHeight: 300}}
                                             anchorEl={anchorEl}
                                             open={open}
                                             onClose={handleClose}
@@ -134,9 +134,9 @@ const AppBarComponent = () => {
                                         </Menu>
                                     </Box>
                                 ) : (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>)
+                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                        <Typography textAlign="center">{page}</Typography>
+                                    </MenuItem>)
                             ))}
                         </Menu>
                     </Box>
@@ -147,13 +147,14 @@ const AppBarComponent = () => {
                             flexGrow: 1,
                             minWidth: '70px'
                         }}>
-                        <Icon sx={
-                            {
+                        <NavLink to="/">
+                            <Icon sx={{
                                 display: {xs: 'flex', md: 'none'},
                                 minWidth: '70px'
                             }}>
-                            <img style={{margin: '0 auto'}} src={Logo} alt="logo"/>
-                        </Icon>
+                                <img style={{margin: '0 auto'}} src={Logo} alt="logo"/>
+                            </Icon>
+                        </NavLink>
                     </Box>
                     <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}} color="red">
                         {PAGES.map((page) => (

@@ -19,7 +19,7 @@ const LandingCards = () => {
         <div className="categories-wrapper">
             <div className="vert-card-wrapper">
                 {categories && categories.map((category: Categories, ind: number) => (
-                    ind < 2 && <Card key={Math.random()} sx={{maxWidth: 500}} className="cards-category">
+                    ind < 2 && <Card key={Math.random()} sx={{maxWidth: 650}} className="cards-category">
 											<CardActionArea className={category.title}>
 												<CardMedia
 													component="img"

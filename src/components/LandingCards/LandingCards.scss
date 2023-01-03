@@ -30,26 +30,17 @@
 
 .cards-category {
   display: flex;
-  text-align: center;
   margin: 10px;
 }
 
-.cards-category .Watches {
+.cards-category .Watches,
+.cards-category .Laptops,
+.cards-category .Monitors {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
 .cards-category .Headphones {
   display: flex;
-  flex-direction: column;
-}
-
-.cards-category .Monitors {
-  display: flex;
   flex-direction: column-reverse;
-}
-
-.cards-category .Laptops {
-  display: flex;
-  flex-direction: column;
 }

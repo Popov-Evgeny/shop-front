@@ -9,6 +9,7 @@ export interface Product {
 }
 
 export interface Categories {
+    id: string,
     title: string,
     image: File,
 }
