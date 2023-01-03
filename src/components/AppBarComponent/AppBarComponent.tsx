@@ -106,7 +106,7 @@ const AppBarComponent = () => {
                         >
                             {PAGES.map((page) => (
                                 page === 'Solutions' ? (
-                                    <Box key={page}>
+                                    <Box key={Math.random()}>
                                         <MenuItem
                                             id="fade-button"
                                             aria-controls={open ? 'fade-menu' : undefined}
@@ -121,23 +121,27 @@ const AppBarComponent = () => {
                                             MenuListProps={{
                                                 'aria-labelledby': 'fade-button',
                                             }}
-                                            sx={{ maxHeight: 300}}
+                                            sx={{maxHeight: 300}}
                                             anchorEl={anchorEl}
                                             open={open}
                                             onClose={handleClose}
                                         >
                                             {categories && categories.map((item: Categories) => (
-                                                <MenuItem key={Math.random()} onClick={handleClose}>
-                                                    <Typography textAlign="center">{item.title}</Typography>
-                                                </MenuItem>
+                                                <NavLink key={Math.random()} to={'/' + item.title.toLowerCase()}>
+                                                    <MenuItem onClick={handleClose}>
+                                                        <Typography textAlign="center">{item.title}</Typography>
+                                                    </MenuItem>
+                                                </NavLink>
                                             ))}
                                         </Menu>
                                     </Box>
                                 ) : (
-                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                        <Typography textAlign="center">{page}</Typography>
-                                    </MenuItem>)
-                            ))}
+                                    <NavLink to={'/' + page.toLowerCase()} key={Math.random()}>
+                                        <MenuItem onClick={handleCloseNavMenu}>
+                                            <Typography textAlign="center">{page}</Typography>
+                                        </MenuItem>
+                                    </NavLink>
+                                )))}
                         </Menu>
                     </Box>
                     <Box sx={
@@ -156,7 +160,7 @@ const AppBarComponent = () => {
                             </Icon>
                         </NavLink>
                     </Box>
-                    <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}} color="red">
+                    <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex', justifyContent: 'center', marginLeft: '-50px'}}}>
                         {PAGES.map((page) => (
                             page === 'Solutions' ? (
                                 <Box key={page}>
@@ -165,7 +169,7 @@ const AppBarComponent = () => {
                                         aria-controls={open ? 'fade-menu' : undefined}
                                         aria-haspopup="true"
                                         aria-expanded={open ? 'true' : undefined}
-                                        sx={{my: 2, color: 'black', display: 'block'}}
+                                        sx={{my: 1.8, color: 'black', display: 'block'}}
                                         onClick={handleClick}
                                     >
                                         Solutions &#9660;
@@ -180,20 +184,23 @@ const AppBarComponent = () => {
                                         onClose={handleClose}
                                     >
                                         {categories && categories.map((item) => (
-                                            <MenuItem key={Math.random()} onClick={handleClose}>
-                                                <Typography textAlign="center">{item.title}</Typography>
-                                            </MenuItem>
+                                            <NavLink to={'/' + item.title.toLowerCase()} key={Math.random()}>
+                                                <MenuItem onClick={handleClose}>
+                                                    <Typography textAlign="center">{item.title}</Typography>
+                                                </MenuItem>
+                                            </NavLink>
                                         ))}
                                     </Menu>
                                 </Box>
-                            ) : (<Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{my: 2, color: 'black', display: 'block'}}
-                            >
-                                {page}
-                            </Button>)
-                        ))}
+                            ) : (<NavLink key={Math.random()} to={'/' + page.toLowerCase()}>
+                                    <Button
+                                        onClick={handleCloseNavMenu}
+                                        sx={{my: 2, color: 'black', display: 'block'}}
+                                    >
+                                        <Typography textAlign="center">{page}</Typography>
+                                    </Button>
+                                </NavLink>
+                            )))}
                     </Box>
 
                     <Box sx={{flexGrow: 0}}>

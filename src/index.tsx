@@ -6,6 +6,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Layout from "./UI/Layout/Layout";
 import {store} from './app/store';
 import {Provider} from "react-redux";
+import ProductCards from "./components/ProductCards/ProductCards";
 
 const router = createBrowserRouter([
     {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <App/>,
+            },
+            {
+                path: "/all products",
+                element: <ProductCards/>,
             },
             {
                 path: "*",
