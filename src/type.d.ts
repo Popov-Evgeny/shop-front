@@ -13,3 +13,8 @@ export interface Categories {
     title: string,
     image: File,
 }
+
+export interface SocialLinks {
+    title: string,
+    link: string,
+}

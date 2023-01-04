@@ -8,7 +8,7 @@ import './Footer.scss';
 import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import {selectCategories} from "../../store/categories/categoriesSlice";
 import {fetchCategories} from "../../store/categories/categoriesThunks";
-import {Categories} from "../../type";
+import {Categories, SocialLinks} from "../../type";
 import {SOCIALS} from "../../constants";
 
 const Footer = () => {
@@ -86,11 +86,11 @@ const Footer = () => {
                             Follow Us
                         </Typography>
                         <ListItem component="div" disablePadding className="footer-block-list">
-                            {SOCIALS.map((item: string) => (
+                            {SOCIALS.map((item: SocialLinks) => (
                                 <ListItemButton key={Math.random()}>
-                                    <NavLink to={'/' + item.toLowerCase()} className="footer-block-link">
-                                        <ListItemText primary={item}/>
-                                    </NavLink>
+                                    <a href={item.link} target="_blank" rel="noopener&quot noreferrer" className="footer-block-link">
+                                        <ListItemText primary={item.title}/>
+                                    </a>
                                 </ListItemButton>
                             ))}
                         </ListItem>
