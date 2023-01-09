@@ -113,7 +113,7 @@ const AppBarComponent = () => {
                                             aria-haspopup="true"
                                             aria-expanded={open ? 'true' : undefined}
                                             onClick={handleClick}
-                                            style={{fontSize: '14px'}}
+                                            className="select"
                                         >
                                             Solutions
                                         </MenuItem>
