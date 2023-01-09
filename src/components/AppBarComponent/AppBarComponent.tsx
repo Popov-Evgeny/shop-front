@@ -160,7 +160,10 @@ const AppBarComponent = () => {
                             </Icon>
                         </NavLink>
                     </Box>
-                    <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex', justifyContent: 'center', marginLeft: '-50px'}}}>
+                    <Box sx={{
+                        flexGrow: 1,
+                        display: {xs: 'none', md: 'flex', justifyContent: 'center', marginLeft: '-50px'}
+                    }}>
                         {PAGES.map((page) => (
                             page === 'Solutions' ? (
                                 <Box key={page}>
@@ -226,9 +229,11 @@ const AppBarComponent = () => {
                             onClose={handleCloseUserMenu}
                         >
                             {SETTINGS.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
-                                </MenuItem>
+                                <NavLink key={Math.random()} to={'/' + setting.toLowerCase()}>
+                                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                        <Typography textAlign="center">{setting}</Typography>
+                                    </MenuItem>
+                                </NavLink>
                             ))}
                         </Menu>
                     </Box>

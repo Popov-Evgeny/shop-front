@@ -25,13 +25,17 @@
   flex-direction: column;
 }
 
+.read-more {
+  font-family: 'Readex Pro', sans-serif !important;
+}
+
 .card-title {
-  font-family: 'Readex Pro', sans-serif;
+  font-family: 'Readex Pro', sans-serif !important;
   font-style: normal;
   font-weight: 400;
-  font-size: calc(20px + 4 * (100vw / 1280));
+  font-size: calc(14px + 4 * (100vw / 1280)) !important;
   @media (max-width: 767px) {
-    font-size: calc(20px + (8 * 0.7) * ((100vw - 320px) / 1280));
+    font-size: calc(14px + (8 * 0.7) * ((100vw - 320px) / 1280)) !important;
   }
   margin: 10px;
   flex-grow: 3;
@@ -44,7 +48,7 @@
 }
 
 .cards {
-  min-width: 300px;
+  min-width: 250px;
   width: 20%;
 }
 
@@ -52,18 +56,17 @@
   .cards {
     width: 100%;
   }
-
 }
+
 @media screen and (max-width: 950px) {
   .cards {
     width: 50%;
   }
-
 }
+
 @media screen and (max-width: 1200px) {
   .cards {
     width: 30%;
     margin: 15px;
   }
-
 }

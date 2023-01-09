@@ -73,6 +73,7 @@
   @media (max-width: 767px) {
     line-height: calc((20px + (16 + 16 * 0.7) * ((100vw - 320px) / 1280)) * 1.2);
   }
+  margin-bottom: 25px;
 }
 
 .product-category {
@@ -80,9 +81,9 @@
   font-family: 'Readex Pro', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: calc(20px + 8 * (100vw / 1280));
+  font-size: calc(16px + 8 * (100vw / 1280));
   @media (max-width: 767px) {
-    font-size: calc(20px + (16 * 0.7) * ((100vw - 320px) / 1280));
+    font-size: calc(16px + (16 * 0.7) * ((100vw - 320px) / 1280));
   }
   line-height: calc((20px + 16 * (100vw / 1280)) * 1.2);
   @media (max-width: 767px) {
@@ -125,10 +126,10 @@
   padding: 5px 10px;
   border-radius: 5px;
   margin: 15px;
-  transition: 1.5s;
+  transition: 1s;
   background: #ffffff;
   &:hover{
-    transition: 1.5s;
+    transition: 1s;
     background: #ccc;
     box-shadow: 0 3px 10px 1px gray;
   }

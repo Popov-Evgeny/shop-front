@@ -1,0 +1,36 @@
+.login-form-wrapper {
+  border: 1px solid #eee;
+  max-width: 350px;
+  margin: 150px auto;
+  text-align: center;
+  box-shadow: 0 3px 15px 4px #cccccc;
+  border-radius: 10px;
+}
+
+.login-form-title {
+  font-family: 'Readex Pro', sans-serif !important;
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(14px + 4 * (100vw / 1280)) !important;
+  @media (max-width: 767px) {
+    font-size: calc(14px + (8 * 0.7) * ((100vw - 320px) / 1280)) !important;
+  }
+  margin: 10px;
+}
+
+.login-form-btn {
+  font-family: 'Readex Pro', sans-serif !important;
+  font-style: normal;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  color: #000000 !important;
+}
+
+.css-whebh7-MuiInputBase-root-MuiInput-root:after {
+  border-bottom-color: #000000 !important;
+}
+
+.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: #000 !important;
+  text-align: center;
+}

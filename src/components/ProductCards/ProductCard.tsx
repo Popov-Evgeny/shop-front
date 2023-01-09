@@ -15,12 +15,12 @@ const ProductCard: React.FC<Props> = ({product}) => {
 
     return (
         <Card
-            className="cards" sx={{maxWidth: 450}}
+            className="cards" sx={{maxWidth: 250}}
             onClick={() => navigate('/products/' + product._id)}
         >
             <CardActionArea className="card-body">
                 <CardMedia
-                    sx={{height: 220}}
+                    sx={{height: 160}}
                     image={API_URL + '/uploads/' + product.image}
                     title="green iguana"
                     className="card-img"
@@ -29,7 +29,7 @@ const ProductCard: React.FC<Props> = ({product}) => {
                     <Typography gutterBottom variant="h5" component="div" className="card-title">
                         {product.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" color="text.secondary" className="read-more">
                         <b>Read more...</b>
                     </Typography>
                 </CardContent>

@@ -9,6 +9,8 @@ import {Provider} from "react-redux";
 import ProductCards from "./components/ProductCards/ProductCards";
 import PreviewProduct from "./components/PreviewProduct/PreviewProduct";
 import NotFound from "./UI/NotFound/NotFound";
+import ProductCart from "./components/ProductCart/ProductCart";
+import LoginForm from "./components/LoginForm/LoginForm";
 
 const router = createBrowserRouter([
     {
@@ -20,12 +22,20 @@ const router = createBrowserRouter([
                 element: <App/>,
             },
             {
+                path: "/login",
+                element: <LoginForm/>,
+            },
+            {
                 path: "/all products",
                 element: <ProductCards/>,
             },
             {
                 path: "/products/:id",
                 element: <PreviewProduct/>,
+            },
+            {
+                path: "/cart",
+                element: <ProductCart/>,
             },
             {
                 path: "*",

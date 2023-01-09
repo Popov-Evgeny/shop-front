@@ -1,7 +1,8 @@
 export const API_URL = 'http://localhost:8000';
 
 export const PAGES = ['All products', 'Solutions', 'About', 'Support'];
-export const SETTINGS = ['Profile', 'Account', 'Dashboard', 'Logout'];
+export const SETTINGS = ['Profile', 'Cart', 'Logout'];
+// export const SETTINGS_ADMIN = ['Profile', 'Add new product', 'Orders', 'Logout'];
 export const SOCIALS = [
     {
         title: 'Instagram',
