@@ -1,25 +1,19 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {RootState} from "../../app/store";
-// import {fetchProduct, fetchProducts, fetchProductsLimit} from "./usersThunks";
-import {Product} from "../../type";
+import {RootState} from "../../app/store/store";
+import {User} from "../../app/types/auth";
+import {loginUser, logout, registerUser} from "./usersThunks";
 
 
-interface ProductsState {
-  product: Product | null;
-  products: Product[] | null;
-  productsLimit: Product[] | null;
-  fetchAllLoading: boolean;
-  fetchOneLoading: boolean;
-  fetchProductsLimitLoading: boolean;
+interface AuthState {
+  user: User | null;
+  loginLoading: boolean;
+  registerLoading: boolean;
 }
 
-const initialState: ProductsState = {
-  product: null,
-  products: [],
-  productsLimit: [],
-  fetchAllLoading: false,
-  fetchOneLoading: false,
-  fetchProductsLimitLoading: false,
+const initialState: AuthState = {
+  user: null,
+  loginLoading: false,
+  registerLoading: false,
 }
 
 export const UsersSlice = createSlice({
@@ -27,48 +21,37 @@ export const UsersSlice = createSlice({
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
-    // builder.addCase(fetchProducts.pending, (state) => {
-    //   state.fetchAllLoading = true;
-    // });
-    // builder.addCase(fetchProducts.fulfilled, (state, action) => {
-    //   state.fetchAllLoading = false;
-    //   state.products = action.payload;
-    // });
-    // builder.addCase(fetchProducts.rejected, (state) => {
-    //   state.fetchAllLoading = false;
-    // });
-    //
-    // builder.addCase(fetchProduct.pending, (state) => {
-    //   state.fetchOneLoading = true;
-    //   state.product = null;
-    // });
-    // builder.addCase(fetchProduct.fulfilled, (state, action) => {
-    //   state.fetchOneLoading = false;
-    //   state.product = action.payload;
-    // });
-    // builder.addCase(fetchProduct.rejected, (state) => {
-    //   state.fetchOneLoading = false;
-    // });
-    //
-    // builder.addCase(fetchProductsLimit.pending, (state) => {
-    //   state.fetchProductsLimitLoading = true;
-    // });
-    // builder.addCase(fetchProductsLimit.fulfilled, (state, action) => {
-    //   state.fetchProductsLimitLoading = false;
-    //   state.productsLimit = action.payload;
-    // });
-    // builder.addCase(fetchProductsLimit.rejected, (state) => {
-    //   state.fetchProductsLimitLoading = false;
-    // });
+    builder.addCase(registerUser.pending, (state) => {
+      state.registerLoading = true;
+    });
+    builder.addCase(registerUser.fulfilled, (state, action) => {
+      state.registerLoading = false;
+      state.user = action.payload;
+    });
+    builder.addCase(registerUser.rejected, (state) => {
+      state.registerLoading = false;
+    });
+
+    builder.addCase(loginUser.pending, (state) => {
+      state.loginLoading = true;
+    });
+    builder.addCase(loginUser.fulfilled, (state, action) => {
+      state.loginLoading = false;
+      state.user = action.payload;
+    });
+    builder.addCase(loginUser.rejected, (state) => {
+      state.loginLoading = false;
+    });
+
+    builder.addCase(logout.fulfilled, (state) => {
+      state.user = null;
+    });
   }
 });
 
-export const productsReducer = UsersSlice.reducer;
-//
-// export const selectProduct = (state: RootState) => state.products.product;
-// export const selectProducts = (state: RootState) => state.products.products;
-// export const selectProductsLimit = (state: RootState) => state.products.productsLimit;
-// export const selectFetchAllLoading = (state: RootState) => state.products.fetchAllLoading;
-// export const selectFetchLoading = (state: RootState) => state.products.fetchAllLoading;
-// export const selectFetchProductLoading = (state: RootState) => state.products.fetchOneLoading;
-// export const selectFetchProductsLimitLoading = (state: RootState) => state.products.fetchProductsLimitLoading;
+export const userReducer = UsersSlice.reducer;
+
+export const selectUser = (state: RootState) => state.users.user;
+export const selectRegisterLoading = (state: RootState) => state.users.registerLoading;
+export const selectLoginLoading = (state: RootState) => state.users.loginLoading;
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, CardActionArea, CardContent, CardMedia} from "@mui/material";
 import Typography from "@mui/material/Typography";
-import {Product} from "../../type";
+import {Product} from "../../app/types/types";
 import {API_URL} from "../../constants";
 import './ProductCards.scss';
 import {useNavigate} from "react-router-dom";

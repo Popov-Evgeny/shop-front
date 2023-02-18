@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {RootState} from "../../app/store";
+import {RootState} from "../../app/store/store";
 import {fetchProduct, fetchProducts, fetchProductsLimit} from "./productsThunks";
-import {Product} from "../../type";
+import {Product} from "../../app/types/types";
 
 
 interface ProductsState {

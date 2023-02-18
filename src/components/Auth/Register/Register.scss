@@ -1,4 +1,4 @@
-.login-form-wrapper {
+.register-form-wrapper {
   border: 1px solid #eee;
   max-width: 350px;
   margin: 150px auto;
@@ -7,7 +7,7 @@
   border-radius: 10px;
 }
 
-.login-form-title {
+.register-form-title {
   font-family: 'Readex Pro', sans-serif !important;
   font-style: normal;
   font-weight: 400;
@@ -18,19 +18,28 @@
   margin: 10px;
 }
 
-.login-form-btn {
+.register-form-btn {
   font-family: 'Readex Pro', sans-serif !important;
   font-style: normal;
   font-weight: 700 !important;
   font-size: 14px !important;
+  background: #f5f5f5!important;
   color: #000000 !important;
-}
-
-.css-whebh7-MuiInputBase-root-MuiInput-root:after {
-  border-bottom-color: #000000 !important;
+  max-width: 180px;
 }
 
 .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
   color: #000 !important;
-  text-align: center;
+}
+
+.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-error {
+  color: #d32f2f !important;
+}
+
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #000!important;
+}
+
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+  border-color: #d32f2f!important;
 }

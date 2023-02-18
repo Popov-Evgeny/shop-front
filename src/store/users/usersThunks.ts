@@ -1,8 +1,8 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import axiosApi from "../../axiosApi";
-import {ApiUser, LoginUserData, User} from "../../type";
+import {LoginDto, RegisterDto, User} from "../../app/types/auth";
 
-export const register = createAsyncThunk<User | null, ApiUser>(
+export const registerUser = createAsyncThunk<User | null, RegisterDto>(
     'users/register',
     async (userData) => {
         const response = await axiosApi.post<User | null>('/users', userData);
@@ -10,10 +10,10 @@ export const register = createAsyncThunk<User | null, ApiUser>(
     },
 )
 
-export const login = createAsyncThunk<User | null, LoginUserData>(
+export const loginUser = createAsyncThunk<User | null, LoginDto>(
     'users/login',
     async (userData) => {
-        const response = await axiosApi.post<User | null>('/users', userData);
+        const response = await axiosApi.post<User | null>('/users/sessions', userData);
         return response.data;
     },
 )

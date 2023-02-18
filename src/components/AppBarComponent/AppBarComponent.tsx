@@ -15,10 +15,10 @@ import MenuItem from '@mui/material/MenuItem';
 import Logo from '../../assets/icons/logo.png';
 import {Icon} from "@mui/material";
 import {NavLink} from "react-router-dom";
-import {useAppDispatch, useAppSelector} from "../../app/hooks";
+import {useAppDispatch, useAppSelector} from "../../app/store/hooks";
 import {fetchCategories} from "../../store/categories/categoriesThunks";
 import {selectCategories} from "../../store/categories/categoriesSlice";
-import {Categories} from "../../type";
+import {Categories} from "../../app/types/types";
 import {PAGES, SETTINGS} from "../../constants";
 
 const AppBarComponent = () => {
@@ -60,7 +60,7 @@ const AppBarComponent = () => {
     };
 
     return (
-        <AppBar position="static" color="default">
+        <AppBar position="static" sx={{bgcolor: 'white'}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={

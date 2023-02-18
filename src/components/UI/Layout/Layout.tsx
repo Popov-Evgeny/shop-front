@@ -1,25 +1,26 @@
 import React from 'react';
 import {Outlet} from "react-router-dom";
-import AppBarComponent from "../../components/AppBarComponent/AppBarComponent";
+import AppBarComponent from "../../AppBarComponent/AppBarComponent";
 import Container from "@mui/material/Container";
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../Footer/Footer";
 import './Layout.scss';
+import {Box} from "@mui/material";
 
 const Layout: React.FC<React.PropsWithChildren> = () => {
     return (
-        <div className="wrapper">
-            <header>
+        <Box className="wrapper">
+            <Box component={'header'}>
                 <AppBarComponent/>
-            </header>
-            <main className="main">
+            </Box>
+            <Box component={'main'} className="main">
                 <Container maxWidth="xl">
                     <Outlet/>
                 </Container>
-            </main>
-            <footer>
+            </Box>
+            <Box component={'footer'}>
                 <Footer/>
-            </footer>
-        </div>
+            </Box>
+        </Box>
     );
 };
 

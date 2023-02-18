@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import Layout from "./UI/Layout/Layout";
-import {store} from './app/store';
+import Layout from "./components/UI/Layout/Layout";
+import {store} from './app/store/store';
 import {Provider} from "react-redux";
 import ProductCards from "./components/ProductCards/ProductCards";
 import PreviewProduct from "./components/PreviewProduct/PreviewProduct";
-import NotFound from "./UI/NotFound/NotFound";
+import NotFound from "./components/UI/NotFound/NotFound";
 import ProductCart from "./components/ProductCart/ProductCart";
-import LoginForm from "./components/LoginForm/LoginForm";
+import Login from "./components/Auth/Login/Login";
+import Register from "./components/Auth/Register/Register";
 
 const router = createBrowserRouter([
     {
@@ -22,8 +23,12 @@ const router = createBrowserRouter([
                 element: <App/>,
             },
             {
-                path: "/login",
-                element: <LoginForm/>,
+                path: "/signUp",
+                element: <Register/>,
+            },
+            {
+                path: "/signIn",
+                element: <Login/>,
             },
             {
                 path: "/all products",

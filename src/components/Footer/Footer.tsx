@@ -5,10 +5,10 @@ import Logo from "../../assets/icons/logo.png";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import './Footer.scss';
-import {useAppDispatch, useAppSelector} from "../../app/hooks";
+import {useAppDispatch, useAppSelector} from "../../app/store/hooks";
 import {selectCategories} from "../../store/categories/categoriesSlice";
 import {fetchCategories} from "../../store/categories/categoriesThunks";
-import {Categories, SocialLinks} from "../../type";
+import {Categories, SocialLinks} from "../../app/types/types";
 import {SOCIALS} from "../../constants";
 
 const Footer = () => {
