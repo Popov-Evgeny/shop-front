@@ -19,11 +19,14 @@ import {useAppDispatch, useAppSelector} from "../../app/store/hooks";
 import {fetchCategories} from "../../store/categories/categoriesThunks";
 import {selectCategories} from "../../store/categories/categoriesSlice";
 import {Categories} from "../../app/types/types";
-import {PAGES, SETTINGS} from "../../constants";
+import {AUTH, PAGES, USER_MENU} from "../../constants";
+import {selectUser} from "../../store/users/usersSlice";
+import {AccountCircle} from "@mui/icons-material";
 
 const AppBarComponent = () => {
     const dispatch = useAppDispatch();
     const categories = useAppSelector(selectCategories);
+    const user = useAppSelector(selectUser);
 
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
@@ -82,7 +85,12 @@ const AppBarComponent = () => {
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
-                            color="inherit"
+                            color={"inherit"}
+                            sx={{
+                                bgcolor: 'gray',
+                                width: 40,
+                                height: 40
+                            }}
                         >
                             <MenuIcon/>
                         </IconButton>
@@ -209,9 +217,14 @@ const AppBarComponent = () => {
 
                     <Box sx={{flexGrow: 0}}>
                         <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg"/>
-                            </IconButton>
+                            {user ? (
+                                <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
+                                    <Avatar alt={user.name} src="/static/images/avatar/2.jpg"
+                                            sx={{width: 40, height: 40}}/>
+                                </IconButton>) : (
+                                <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
+                                    <AccountCircle sx={{width: 40, height: 40}}/>
+                                </IconButton>)}
                         </Tooltip>
                         <Menu
                             sx={{mt: '45px'}}
@@ -229,13 +242,19 @@ const AppBarComponent = () => {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            {SETTINGS.map((setting) => (
+                            {user ? (USER_MENU.map((setting) => (
                                 <NavLink key={Math.random()} to={'/' + setting.toLowerCase()}>
                                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
                                         <Typography textAlign="center">{setting}</Typography>
                                     </MenuItem>
                                 </NavLink>
-                            ))}
+                            ))) : (AUTH.map((setting) => (
+                                <NavLink key={Math.random()} to={'/' + setting.link}>
+                                    <MenuItem key={Math.random()} onClick={handleCloseUserMenu}>
+                                        <Typography textAlign="center">{setting.prev}</Typography>
+                                    </MenuItem>
+                                </NavLink>
+                            )))}
                         </Menu>
                     </Box>
                 </Toolbar>

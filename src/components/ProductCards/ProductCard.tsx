@@ -22,7 +22,7 @@ const ProductCard: React.FC<Props> = ({product}) => {
                 <CardMedia
                     sx={{height: 160}}
                     image={API_URL + '/uploads/' + product.image}
-                    title="green iguana"
+                    title={product.title}
                     className="card-img"
                 />
                 <CardContent className="card-text">
