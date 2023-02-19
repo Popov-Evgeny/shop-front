@@ -22,6 +22,7 @@ import {Categories} from "../../app/types/types";
 import {AUTH, PAGES, USER_MENU} from "../../constants";
 import {selectUser} from "../../store/users/usersSlice";
 import {AccountCircle} from "@mui/icons-material";
+import {logout} from "../../store/users/usersThunks";
 
 const AppBarComponent = () => {
     const dispatch = useAppDispatch();
@@ -61,6 +62,10 @@ const AppBarComponent = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const logoutHandler = () => {
+        dispatch(logout());
+    }
 
     return (
         <AppBar position="static" sx={{bgcolor: 'white'}}>
@@ -243,11 +248,14 @@ const AppBarComponent = () => {
                             onClose={handleCloseUserMenu}
                         >
                             {user ? (USER_MENU.map((setting) => (
-                                <NavLink key={Math.random()} to={'/' + setting.toLowerCase()}>
+                                setting.toLowerCase() === 'logout' ? (
+                                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                        <Typography textAlign="center" onClick={logoutHandler}>{setting}</Typography>
+                                    </MenuItem>) : (<NavLink key={Math.random()} to={'/' + setting.toLowerCase()}>
                                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
                                         <Typography textAlign="center">{setting}</Typography>
                                     </MenuItem>
-                                </NavLink>
+                                </NavLink>)
                             ))) : (AUTH.map((setting) => (
                                 <NavLink key={Math.random()} to={'/' + setting.link}>
                                     <MenuItem key={Math.random()} onClick={handleCloseUserMenu}>

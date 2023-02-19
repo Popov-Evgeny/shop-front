@@ -18,9 +18,9 @@ export const loginUser = createAsyncThunk<User | null, LoginDto>(
     },
 )
 
-export const logout = createAsyncThunk<void, string>(
+export const logout = createAsyncThunk(
     'users/logout',
-    async (token) => {
+    async () => {
         await axiosApi.delete('/users/sessions');
         axiosApi.interceptors.request.use()
     },

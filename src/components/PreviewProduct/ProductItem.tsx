@@ -5,6 +5,7 @@ import {Product} from "../../app/types/types";
 import {API_URL} from "../../constants";
 import {useAppSelector} from "../../app/store/hooks";
 import {selectCategories} from "../../store/categories/categoriesSlice";
+import productImg from "../../assets/images/productImg.jpeg";
 import './PreviewProduct.scss';
 
 interface Props {
@@ -18,7 +19,7 @@ const ProductItem: React.FC<Props> = ({product}) => {
     return (
         <Box className="product-block">
             <Box className="product-block-img">
-                <img src={API_URL + '/uploads/' + product.image} alt={product.title} className="product-img"/>
+                <img src={product.image ? API_URL + '/uploads/' + product.image : productImg} alt={product.title} className="product-img"/>
             </Box>
             <Box className="product-block-info">
                 <Typography component={'h4'} variant={'h4'} sx={{m: 2}} className="product-title">{product.title}</Typography>

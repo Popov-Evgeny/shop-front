@@ -4,7 +4,7 @@ import './index.scss';
 import App from './App';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Layout from "./components/UI/Layout/Layout";
-import {store} from './app/store/store';
+import {store, persistor} from './app/store/store';
 import {Provider} from "react-redux";
 import ProductCards from "./components/ProductCards/ProductCards";
 import PreviewProduct from "./components/PreviewProduct/PreviewProduct";
@@ -12,6 +12,7 @@ import NotFound from "./components/UI/NotFound/NotFound";
 import ProductCart from "./components/ProductCart/ProductCart";
 import Login from "./components/Auth/Login/Login";
 import Register from "./components/Auth/Register/Register";
+import {PersistGate} from "redux-persist/integration/react";
 
 const router = createBrowserRouter([
     {
@@ -56,7 +57,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <Provider store={store}>
-        <RouterProvider router={router}/>
+        <PersistGate loading={null} persistor={persistor}>
+            <RouterProvider router={router}/>
+        </PersistGate>
     </Provider>
 );
 

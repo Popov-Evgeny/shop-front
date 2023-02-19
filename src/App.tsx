@@ -2,9 +2,9 @@ import React from 'react';
 import './App.scss';
 import Slider from "./components/UI/Swiper/Slider";
 import Box from "@mui/material/Box";
-import ProductCards from "./components/ProductCards/ProductCards";
 import LandingCards from "./components/LandingCards/LandingCards";
 import {Typography} from "@mui/material";
+import LandingProducts from "./components/LandingCards/LandingProducts";
 
 function App() {
     return (
@@ -29,7 +29,7 @@ function App() {
                     <Typography className="description-block-subtitle">Our new Limited Edition Winter Design BESPOKE 4-Door
                         Flex™</Typography>
                 </Box>
-                <ProductCards/>
+                <LandingProducts/>
             </Box>
         </>
     );

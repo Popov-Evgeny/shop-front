@@ -3,8 +3,9 @@ import {Card, CardActionArea, CardContent, CardMedia} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Product} from "../../app/types/types";
 import {API_URL} from "../../constants";
-import './ProductCards.scss';
 import {useNavigate} from "react-router-dom";
+import productImg from '../../assets/images/productImg.jpeg';
+import './ProductCards.scss';
 
 interface Props {
     product: Product
@@ -21,7 +22,7 @@ const ProductCard: React.FC<Props> = ({product}) => {
             <CardActionArea className="card-body">
                 <CardMedia
                     sx={{height: 160}}
-                    image={API_URL + '/uploads/' + product.image}
+                    image={product.image ? API_URL + '/uploads/' + product.image : productImg}
                     title={product.title}
                     className="card-img"
                 />
