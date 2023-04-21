@@ -23,6 +23,10 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 h1,
@@ -99,8 +103,13 @@ li {
   display: none;
 }
 
-.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
-  max-height: calc(100vh - 80vh) !important;
+.css-1497tbe-MuiPopper-root{
+  @media only screen and (max-width: 900px){
+    margin-top: 33px!important;
+    left: 107px!important;
+  }
 }
+
+
 
 /*font-family: 'Readex Pro', sans-serif;*/
